@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*** SWIPE LIST OVERRIDES **/
+.swipeable-list-item__leading-actions, .swipeable-list-item__trailing-actions {
+  @apply text-white text-lg uppercase font-bold;
+}
+.swipeable-list-item__leading-actions {
+  @apply bg-blue-600;
+}
+.swipeable-list-item__trailing-actions {
+  @apply bg-pink-600;
+}
+.swipeable-list .swipe-action {
+  @apply flex justify-center items-center
+}
+
+.swipeable-list {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.swipeable-list-item {
+  position: relative;
+  transition: max-height 0.5s ease-in-out;
+  max-height: 1000px;
+  transform-origin: top;
+  overflow: hidden;
+  width: 100%;
+}
+
+.swipeable-list-item__leading-actions--return {
+  transition: width 0.5s ease-in-out;
+}
+
+.swipeable-list-item__leading-actions {
+  position: absolute;
+  display: flex;
+  width: 0px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.swipeable-list-item__content--return {
+  transition: transform 0.5s ease-in-out;
+}
+
+.swipeable-list-item__content {
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+}
+
+.swipeable-list-item__trailing-actions {
+  display: flex;
+  width: 0px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  justify-content: flex-end;
+  overflow: hidden;
+  height: 100%;
+}
+
+.swipe-action {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.swipeable-list-item__leading-actions > * {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  transform: scale(1);
+  transform-origin: center left;
+  transition: transform 0.2s ease-out;
+}
+
+.swipeable-list-item__trailing-actions > * {
+  overflow: hidden;
+  transform: scale(1);
+  transform-origin: center right;
+  transition: transform 0.2s ease-out;
+}

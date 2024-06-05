@@ -5,7 +5,7 @@ App creada con React + TypeScript + Vite + Tailwindcss. Desarrollado en Node 20.
 ### Instalación
 
 ```
-git clone git@github.com:don-chalo/control-gastos.git
+git clone https://github.com/don-chalo/control-gastos.git
 cd control-gastos
 npm i
 npm run dev
